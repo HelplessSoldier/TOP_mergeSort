@@ -16,6 +16,28 @@ function _merge(left, right) {
   return res;
 }
 
-function mergeSort(arr) {}
+function mergeSort(arr) {
+  if (arr.length == 0) {
+    return [];
+  } else if (arr.length == 1) {
+    return arr;
+  }
+
+  let midPoint = Math.floor(arr.length / 2);
+  let leftArr = arr.slice(0, midPoint);
+  let rightArr = arr.slice(midPoint, arr.length);
+
+  if (leftArr.length == 1 && rightArr.length == 1) {
+    return _merge(leftArr, rightArr);
+  } else if (leftArr.length == 1 && rightArr.length > 1) {
+    return _merge(leftArr, mergeSort(rightArr));
+  } else if (rightArr.length == 1 && leftArr.length > 1) {
+    return _merge(mergeSort(leftArr), rightArr);
+  } else {
+    return _merge(mergeSort(leftArr), mergeSort(rightArr));
+  }
+}
+
+mergeSort([1, 2, 3, 4, 5, 6]);
 
 module.exports = mergeSort;
