@@ -1,4 +1,3 @@
-// Import the sorting algorithm you want to test
 const sortingAlgorithm = require("./mergeSort");
 
 describe("Sorting Algorithm Test", () => {
