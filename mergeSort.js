@@ -30,6 +30,4 @@ function mergeSort(arr) {
   return _merge(mergeSort(leftArr), mergeSort(rightArr));
 }
 
-mergeSort([1, 2, 3, 4, 5, 6]);
-
 module.exports = mergeSort;
