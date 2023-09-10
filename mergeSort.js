@@ -17,9 +17,7 @@ function _merge(left, right) {
 }
 
 function mergeSort(arr) {
-  if (arr.length == 0) {
-    return [];
-  } else if (arr.length == 1) {
+  if (arr.length <= 1) {
     return arr;
   }
 
